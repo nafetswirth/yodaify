@@ -1,5 +1,5 @@
 
-// app.js
+// server.js
 // 
 // Copyright (c) 2016 Stefan Wirth
 //
@@ -25,6 +25,7 @@
 var app = require('express')();
 var https = require('https');
 var bodyParser = require('body-parser');
+var Promise = require('bluebird');
 
 //globals
 var YODA_API_KEY = process.env.YODA_API_KEY;
@@ -40,7 +41,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/yodas', function(req, res) {
     var text = req.body.text || 'Do you even write?';
-    console.log(req.body);
 
     yodaify({
         host: YODA_API_HOST,
