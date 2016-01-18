@@ -51,7 +51,10 @@ app.post('/yodas', function(req, res) {
         }
     })
     .then(function(yodaifyedResponse) {
-        res.status(OK).json({text: yodaifyedResponse});
+        res.status(OK).json({
+            response_type: 'in_channel',
+            text: yodaifyedResponse
+        });
     })
     .catch(function(err) {
         res.status(SERVER_ERROR).json({error: err});
