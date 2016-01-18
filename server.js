@@ -36,9 +36,11 @@ var SERVER_ERROR = 500;
 var ERROR_CODE = 1;
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/yodas', function(req, res) {
     var text = req.body.text || 'Do you even write?';
+    console.log(req.body);
 
     yodaify({
         host: YODA_API_HOST,
