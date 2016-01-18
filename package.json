@@ -4,7 +4,7 @@
   "description": "Simple express server that can be used with a custom slack command to yodaify an input text",
   "main": "app.js",
   "author": "Stefan Wirth",
-  "license": "MIT"
+  "license": "MIT",
   "dependencies": {
     "bluebird": "^3.1.1",
     "body-parser": "^1.14.2",
